@@ -194,12 +194,16 @@ BINARY_SENSORS: dict[str, tuple[TuyaBinarySensorEntityDescription, ...]] = {
     ),
     # Door Window Sensor
     # https://developer.tuya.com/en/docs/iot/s?id=K9gf48hm02l8m
-    "mcs": (
+        "mcs": (
         TuyaBinarySensorEntityDescription(
             key=DPCode.DOORCONTACT_STATE,
             device_class=BinarySensorDeviceClass.DOOR,
         ),
-        TAMPER_BINARY_SENSOR,
+        TuyaBinarySensorEntityDescription(
+            key=DPCode.SWITCH,
+            device_class=BinarySensorDeviceClass.DOOR,
+        ),
+        TAMPER_BINARY_SENSOR, 
     ),
     # Access Control
     # https://developer.tuya.com/en/docs/iot/s?id=Kb0o2xhlkxbet
